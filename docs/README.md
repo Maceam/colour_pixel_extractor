@@ -8,8 +8,8 @@ as the current solutions are geared towards either batch processing
 or processing smaller images.
 
 ## Setting Up the Image
-Please format your image as an RGB .tif file, as otherwise, this 
-will not function.
+Although I made it for .tif with or without an alpha chanel. It might 
+work with any other RGB image format.
 
 ## How to Use
 - Place the image you wish to extract into the `data` folder within 
@@ -18,9 +18,8 @@ will not function.
 - Run `__main__.py`.
 
 ## Note
-The current saving method overwrites the existing CSV file every 
-time it is run. I intend to later add multi-image extraction or 
-automatic indexing of the file name if it already exists.
+Any .csv with the same name will be written. I intend to later add multi-image 
+extraction or automatic indexing of the file name if it already exists.
 
 ## Excluded files
 Due to the size of the generated csv It will not be included as 
