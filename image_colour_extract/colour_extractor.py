@@ -44,7 +44,7 @@ def flatten_image_data(image_array_extraction):
     index_grid = np.arange(rows * cols).reshape((rows, cols))
     x_grid, y_grid = np.meshgrid(np.arange(cols), np.arange(rows))
     flat_data_extraction = np.column_stack(
-        (index_grid.flatten(), x_grid.flatten(), y_grid.flatten(), image_array_extraction.reshape(-1, channels)))
+    (index_grid.flatten(), x_grid.flatten(), y_grid.flatten(), image_array_extraction.reshape(-1, channels)))
     return flat_data_extraction
 
 
@@ -52,7 +52,8 @@ def flatten_image_data(image_array_extraction):
 # We need to add an if statement incase there is an alpha chanel
 def save_to_csv(data, image, filename_extract_output):
     with open(filename_extract_output, 'w', newline='') as file:
-        if image.mode == 'RGBA' or 'RGBX':
+        colour_mode = str(image.mode)
+        if colour_mode == 'RGBA' or colour_mode == 'RGBX':
             writer = csv.writer(file)
             writer.writerow(['Pixel_Index', 'X', 'Y', 'R', 'G', 'B', 'A'])  # Header
             writer.writerows(data)
